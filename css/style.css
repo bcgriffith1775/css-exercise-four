@@ -1,4 +1,91 @@
+$ css-exercise-three
+*, *:before, *:after {
+  box-sizing: border-box;
+}
 body {
   background-color: #dadada;
   font-size: 10px;
 }
+.container {
+  margin: 20px auto;
+    /*Removed width: 90% */
+}
+        /*Changed div to .preview*/
+.preview {
+  background-color: #fff;
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size: cover;
+  width: 23%;
+  margin: 5px;
+  height: 200px; /*Set default height*/
+
+}
+.container h1 {
+  display:block;
+  text-align: center;
+  font-family:'Microsoft Yi Baiti';
+  font-weight:bold;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 100;
+  letter-spacing:2px;
+  padding-bottom: 20px;
+  flex-basis:100%; /* Added flex basis to make header not be affected by the Flex style below */
+}
+    /*Changed the classes of the divs to corespond to .preview as element name instead of just calling div */
+.preview.baku {
+  background-image: url(https://i.ibb.co/dkBc5bT/baku.jpg);
+}
+.preview.london {
+  background-image: url(https://i.ibb.co/0J0yRf9/london.png);
+}
+.preview.madrid {
+  background-image: url(https://i.ibb.co/FX0PRgr/madrid.jpg);
+}
+.preview.rome {
+  background-image: url(https://i.ibb.co/vv8vKwr/rome.jpg);
+}
+/* result of above change of classnames by just calling .preview h1 it will change all
+  instead of having same style info over and over */
+.preview h1 {
+  text-align: left;
+  font-weight: bold;
+  font-family: serif;
+  text-transform: inherit;
+  font-size: 18px;
+  padding:20px; /* added padding to the h1 to position inside of the previews */
+
+}
+
+@media screen and (min-width: 991px){
+   .preview {
+     max-width:200px;
+  }
+
+  .container {
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+  }
+}
+@media screen and (max-width: 991px){
+   .preview {
+     width:48%;
+     float:left;
+  }
+}
+@media screen and (max-width: 575px){
+   .preview {
+     width:100%;
+     max-height:250px;
+     margin: 0px;
+     margin-bottom:10px
+  }
+}
+@media screen and (min-width: 575px){
+  .container {
+    margin: 20px 30px;
+  }
+}
+# css-exercise-four
